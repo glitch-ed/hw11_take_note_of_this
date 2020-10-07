@@ -1,17 +1,24 @@
 {
-  "name": "note-taker",
+  "name": "hw11_take_note_of_this",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Application that allows you create and take notes",
+  "main": "routes.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glitch-ed/hw11_take_note_of_this.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
+  "bugs": {
+    "url": "https://github.com/glitch-ed/hw11_take_note_of_this/issues"
   },
-    
-  
+  "homepage": "https://github.com/glitch-ed/hw11_take_note_of_this#readme"
 }

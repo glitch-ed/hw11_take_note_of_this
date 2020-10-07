@@ -53,7 +53,31 @@ module.exports = function(app) {
             });
     });
 
+    app.delete("/api/notes/:id", (req, res) => {
+
+        let id = req.params.id;
     
+        readFileAsync("./db/db.json", "utf8")
+            .then((result, err) => {
+                if (err) console.log(err);
+                return Promise.resolve(JSON.parse(result));
+            })
+            .then(data => {
+                data.splice(data.indexOf(data.find(element => element.id == id)), 1);
+                return Promise.resolve(data);
+            })
+            .then(data => {
+                writeFileAsync("./db/db.json", JSON.stringify(data));
+                res.send("OK");
+            })
+            .catch(err => {
+                if (err) throw err;
+            });
+    });
+
+    app.use(function(req, res, next) {
+        res.status(404).send("Sorry, this content could not be found.")
+    });
 
 
 };
